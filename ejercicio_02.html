@@ -1,0 +1,58 @@
+///santiago segura
+<canvas id='canvas' width=700 height=400>
+<script>
+	function sumaTras(v1, v2) {
+  var s = []; ///variable para guardar el resultado final
+  
+  return s;
+   }
+	function rotacionPunto(cxob,cyob,cot){
+             
+           var mr=[[Math.cos(r), -Math.sin(r)],[Math.sin(r), Math.cos(r)]];
+          
+       }
+       
+       function rotacionObj(obj,r){
+          
+          var c=[];
+          
+          for(i=0; i <obj.length;i+=2){
+          var pr = rotacionPunto(obj[i], obj[i+1])
+          c[i]=(pr[i % 2 == 0 ? 0:1];
+          
+
+       } 
+         return c;
+     }   
+	
+	function polygon(cd, colorBorde, colorRelleno, grosor) { 
+		ctx.beginPath()
+		ctx.strokeStyle = colorBorde;
+		ctx.fillStyle = colorRelleno;
+		ctx.lineWidth = grosor;
+		ctx.moveTo(cd[0],cd[1]);
+		for (i=2; i < cd.length; i+=2)
+		   ctx.lineTo(cd[i],cd[i+1]);
+		ctx.closePath();
+		ctx.stroke();
+		ctx.fill();
+	}
+
+    
+		var canvas = document.getElementById('canvas')
+		var ctx = canvas.getContext('2d')
+
+	    
+
+		 
+		var letra_e = [0, 0, 0, 50, 40, 50, 40, 40, 10, 40, 10, 30, 20, 30, 20, 20, 10, 20, 10, 10, 40, 10, 40, 0];
+
+                var r= Math.PI/6;
+
+                var letra_e_rotado = rotacionObj(letra_e,r)
+              
+    polygon(elem, 'magenta','magenta',)
+
+	polygon(elem_trans, 'green','green',)
+		
+</script>;
