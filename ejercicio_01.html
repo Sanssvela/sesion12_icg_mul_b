@@ -1,0 +1,45 @@
+///santiago segura
+<canvas id='canvas' width=700 height=400>
+<script>
+	function sumaTras(v1, v2) {
+  var s = []; ///variable para guardar el resultado final
+  
+  return s;
+   }
+	function polygon(a, colorBorde, colorRelleno, grosor) { 
+	ctx.beginPath()
+	ctx.strokeStyle = colorBorde
+	ctx.fillStyle = colorRelleno
+	ctx.lineWidth = grosor;
+	ctx.moveTo(a[0],a[1])
+	for (i=2; i < a.length; i+=2)
+	ctx.lineTo(a[i],a[i+1]);
+	ctx.closePath()
+	ctx.stroke()
+	ctx.fill()
+}
+
+	function sumaTra(a,b){ ////posicion de regreso
+	var c = [];
+	for (i=0; i < a.length; i+=2){
+	c[i]=(a[i]+b[0])
+	c[i+1]=(a[i+1]+b[1])
+    }
+	return c;
+}
+
+	var canvas = document.getElementById('canvas')
+	var ctx = canvas.getContext('2d');
+
+	var elem = [0, 0, 0, 50, 40, 50, 40, 40, 10, 40, 10, 30, 20, 30, 20, 20, 10, 20, 10, 10, 40, 10, 40, 0];
+
+	var vec_tran = [60, 90];
+
+	var elem_trans = sumaTra(elem, vec_tran)
+
+    polygon(elem, 'magenta','magenta',)
+
+	polygon(elem_trans, 'green','green',)
+
+
+</script>
