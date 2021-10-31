@@ -1,0 +1,84 @@
+<canvas id='canvas' width=700 height=400>
+<script>
+
+function sumaTras(v1, v2) {
+  var s = []; ///variable para guardar el resultado final
+  
+  return s;
+   }
+	function rotacionPunto(cxob,cyob,cot){
+             
+           var mr=[[Math.cos(r), -Math.sin(r)],[Math.sin(r), Math.cos(r)]];
+          
+       }
+function polygon(cd, colorBorde, colorRelleno, grosor) { 
+		ctx.beginPath()
+		ctx.strokeStyle = colorBorde;
+		ctx.fillStyle = colorRelleno;
+		ctx.lineWidth = grosor;
+		ctx.moveTo(cd[0],cd[1]);
+		for (i=2; i < cd.length; i+=2)
+		   ctx.lineTo(cd[i],cd[i+1]);
+		ctx.closePath();
+		ctx.stroke();
+		ctx.fill();
+	}
+
+function rotacionPunto(cxOb,cyOb,rot){
+var mr= [[Math.cos(r), -Math.sin(r)], [Math.sin(r), Math.cos(r)]]       //Matriz de 2x2
+fill_cxOb = letra_e.length;
+c_cxOb = letra_e[0].length;
+fill_cyOb = r.length;
+c_cyOb = r[0].length;
+
+let rotacion = new Array(fill_cxOb);
+for (x=0; x<rotacion.length;x++)
+    Rotacion[x] = new Array(c_cyOb).fill(0);
+
+for (x=0; x < rotacion.length; x++) {
+        for (y=0; y < rotacion[x].length; y++) {                                
+            for (z=0; z<c_cxOb; z++) {
+                rotacion [x][y] = rotacion [x][y] + cxOb[x][z]*cyOb[z][y]; 
+}
+        }
+    }
+return rotacion;
+}
+
+	
+function RotacionDeObj(Func,Rot){
+var c = [];
+
+var m= [Math.cos(Rot), -Math.sin(Rot),Math.sin(Rot), Math.cos(Rot)]
+
+for (i=0; i < Func.length; i+=2){   
+c[i]=(Func[i]*m[0]+Func[i+1]*m[1])      
+c[i+1]=(Func[i]*m[2]+Func[i+1]*m[3])  
+  }
+
+return c;
+
+}
+var canvas = document.getElementById('canvas')
+var ctx = canvas.getContext('2d');  
+
+var letra_e = [0,0, 0,50, 40,50, 40,40, 10,40, 10,30, 20,30, 20,20, 10,20, 10,10, 40,10, 40,0, 0,0 ];
+
+var letra_e_2 = [190,0, 199,51, 241,51, 240,40, 210,40, 210,30, 220,30, 220,20, 210,20, 210,10, 240,10, 240,0, 200,0 ];  
+
+var r = Math.PI/6;
+
+var letra_e_rotada_2 = RotacionDeObj(letra_e_2, r)
+polygon(letra_e_rotada_2, 'green','green') 
+
+polygon(letra_e, 'orange', 'orange');
+	var r = Math.PI/6;
+	var letra_e_rotada = rotacionObj(letra_e, r);
+
+        var vt = [50,50];
+        var letra_e_transform = sumaTrasl(letra_e_rotada, vt)
+
+        polygon(letra_e_transform, 'blue', 'blue');
+
+	
+</script>
